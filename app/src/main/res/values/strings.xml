@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lab_Exam_04</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="add_task">ADD TASK</string>
+    <string name="floating_action_btn">floating_action_btn</string>
+    <string name="tilte">Tilte</string>
+    <string name="description">Description</string>
+    <string name="date">Date</string>
+    <string name="edit">edit</string>
+    <string name="delete">delete</string>
+    <string name="new_task">New Task</string>
+    <string name="enter_the_task_title">Enter the task title</string>
+    <string name="enter_task_description">Enter task description</string>
+</resources>
