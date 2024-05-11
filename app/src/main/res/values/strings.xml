@@ -11,4 +11,6 @@
     <string name="new_task">New Task</string>
     <string name="enter_the_task_title">Enter the task title</string>
     <string name="enter_task_description">Enter task description</string>
+    <string name="update">Update</string>
+    <string name="update_the_task">Update the task</string>
 </resources>

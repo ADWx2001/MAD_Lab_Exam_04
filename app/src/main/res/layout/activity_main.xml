@@ -45,6 +45,7 @@
         android:layout_margin="16dp"
         android:backgroundTint="@color/material_dynamic_primary50"
         android:text="@string/add_task"
+        android:id="@+id/addTaskFABtn"
         android:textColor="@color/black"
         android:contentDescription="@string/floating_action_btn"
         android:textStyle="bold"

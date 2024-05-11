@@ -9,7 +9,8 @@
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@color/white"
     app:cardElevation="10dp"
-    app:cardPreventCornerOverlap="false"
+
+
     >
 
     <RelativeLayout
@@ -63,6 +64,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/editDeleteL"
             android:orientation="vertical"
+            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             >
 

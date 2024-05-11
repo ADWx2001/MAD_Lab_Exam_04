@@ -6,7 +6,7 @@
         <item name="android:statusBarColor">@color/black</item>
     </style>
 
-    <style name="CardViewStyle" parent="Widget.Material3.CardView.Outlined">
+    <style name="CardViewStyle" parent="Widget.Material3.CardView.Filled">
         <item name="shapeAppearanceOverlay">@style/CutShape</item>
     </style>
 
@@ -31,6 +31,10 @@
         <item name="shapeAppearance">@style/CutShape</item>
     </style>
 
+    <style name="DialogCustomTheme" parent="Theme.Material3.DayNight.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
 
 
     <style name="Theme.Lab_Exam_04" parent="Base.Theme.Lab_Exam_04" />
