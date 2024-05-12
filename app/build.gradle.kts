@@ -34,7 +34,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures{
-        viewBinding = true;
+        viewBinding = true
     }
 }
 
@@ -51,6 +51,11 @@ dependencies {
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // To use Kotlin Symbol Processing (KSP)
+    //implementation ("androidx.room:room-ktx:$room_version")
+    //ksp("androidx.room:room-compiler:$room_version")
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

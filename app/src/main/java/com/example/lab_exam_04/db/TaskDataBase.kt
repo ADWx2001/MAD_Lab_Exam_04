@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.lab_exam_04.converters.TypeConverter
+import com.example.lab_exam_04.dao.TaskDao
 import com.example.lab_exam_04.models.Task
 
 @Database(
@@ -13,17 +14,21 @@ import com.example.lab_exam_04.models.Task
     version = 1
 )
 @TypeConverters(TypeConverter::class)
-abstract class TaskDataBase : RoomDatabase() {
+abstract class TaskDatabase : RoomDatabase() {
+
+    abstract val taskDao : TaskDao
+
+
     companion object{
         @Volatile
-        private var INSTANCE: TaskDataBase? = null
-        fun getInstance(context: Context): TaskDataBase{
+        private var INSTANCE : TaskDatabase? = null
+        fun getInstance(context: Context) : TaskDatabase{
             synchronized(this){
                 return INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
-                    TaskDataBase::class.java,
-                    name = "task_db"
-                ).build().also{
+                    TaskDatabase::class.java,
+                    "task_db"
+                ).build().also {
                     INSTANCE = it
                 }
             }
