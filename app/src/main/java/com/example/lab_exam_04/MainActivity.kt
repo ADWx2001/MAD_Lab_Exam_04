@@ -12,6 +12,7 @@ import com.example.lab_exam_04.databinding.ActivityMainBinding
 import com.example.lab_exam_04.util.setupDialog
 import com.example.lab_exam_04.util.validateEditText
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         addCloseImgBtn.setOnClickListener { addTaskDialogBox.dismiss() }
 
         val addEDTitle = addTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskTitle)
-        val addEDTitleL = addTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskTitleL)
+        val addEDTitleL = addTaskDialogBox.findViewById<TextInputLayout>(R.id.edTaskTitleL)
 
         addEDTitle.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){}
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         val addETDesc = addTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDesc)
-        val addETDescL = addTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDescL)
+        val addETDescL = addTaskDialogBox.findViewById<TextInputLayout>(R.id.edTaskDescL)
 
         addETDesc.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){ }
@@ -83,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
         //update task start here
         val updateEDTitle = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskTitle)
-        val updateEDTitleL = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskTitleL)
+        val updateEDTitleL = updateTaskDialogBox.findViewById<TextInputLayout>(R.id.edTaskTitleL)
 
         updateEDTitle.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){}
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         val updateETDesc = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDesc)
-        val updateETDescL = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDescL)
+        val updateETDescL = updateTaskDialogBox.findViewById<TextInputLayout>(R.id.edTaskDescL)
 
         updateETDesc.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){ }
