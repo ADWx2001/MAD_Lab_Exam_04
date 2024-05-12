@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import com.example.lab_exam_04.databinding.ActivityMainBinding
 import com.example.lab_exam_04.util.setupDialog
 import com.example.lab_exam_04.util.validateEditText
@@ -38,9 +40,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(mainBinding.root)
 
+        //add task start
         val addCloseImgBtn = addTaskDialogBox.findViewById<ImageView>(R.id.closeImg)
-
-
         addCloseImgBtn.setOnClickListener { addTaskDialogBox.dismiss() }
 
         val addEDTitle = addTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskTitle)
@@ -54,8 +55,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        val addETDesc = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDesc)
-        val addETDescL = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDescL)
+        val addETDesc = addTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDesc)
+        val addETDescL = addTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDescL)
 
         addETDesc.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){ }
@@ -65,12 +66,52 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        val updateCloseImgBtn = updateTaskDialogBox.findViewById<ImageView>(R.id.closeImg)
-        updateCloseImgBtn.setOnClickListener { updateTaskDialogBox.dismiss() }
-
-
         mainBinding.addTaskFABtn.setOnClickListener {
             addTaskDialogBox.show()
         }
+
+        val saveTaskBtn = addTaskDialogBox.findViewById<Button>(R.id.saveTaskBtn)
+        saveTaskBtn.setOnClickListener {
+            if(validateEditText(addEDTitle,addEDTitleL) && validateEditText(addETDesc,addETDescL)){
+                Toast.makeText(this,"Validated!",Toast.LENGTH_LONG).show()
+            }
+        }
+
+        //add task end
+
+        //update task start here
+        val updateEDTitle = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskTitle)
+        val updateEDTitleL = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskTitleL)
+
+        updateEDTitle.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){}
+            override fun onTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){}
+            override fun afterTextChanged(s: Editable){
+                validateEditText(updateEDTitle,updateEDTitleL)
+            }
+        })
+
+        val updateETDesc = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDesc)
+        val updateETDescL = updateTaskDialogBox.findViewById<TextInputEditText>(R.id.edTaskDescL)
+
+        updateETDesc.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){ }
+            override fun onTextChanged(p0: CharSequence?, p1:Int, p2:Int, p3:Int){ }
+            override fun afterTextChanged(s: Editable){
+                validateEditText(updateETDesc,updateETDescL)
+            }
+        })
+
+
+        val updateCloseImgBtn = updateTaskDialogBox.findViewById<ImageView>(R.id.closeImg)
+        updateCloseImgBtn.setOnClickListener { updateTaskDialogBox.dismiss() }
+
+        val updateTaskBtn = addTaskDialogBox.findViewById<Button>(R.id.updateTaskBtn)
+        updateTaskBtn.setOnClickListener {
+            if(validateEditText(updateEDTitle,updateEDTitleL) && validateEditText(updateETDesc,updateETDescL)){
+                Toast.makeText(this,"Validated!",Toast.LENGTH_LONG).show()
+            }
+        }
+        //update task end here
     }
 }
