@@ -47,6 +47,11 @@ dependencies {
     // https://mvnrepository.com/artifact/com.airbnb.android/lottie
     implementation("com.airbnb.android:lottie:6.4.0")
 
+    //Room
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

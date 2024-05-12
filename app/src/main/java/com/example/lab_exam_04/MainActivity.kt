@@ -73,7 +73,9 @@ class MainActivity : AppCompatActivity() {
         val saveTaskBtn = addTaskDialogBox.findViewById<Button>(R.id.saveTaskBtn)
         saveTaskBtn.setOnClickListener {
             if(validateEditText(addEDTitle,addEDTitleL) && validateEditText(addETDesc,addETDescL)){
+                addTaskDialogBox.dismiss()
                 Toast.makeText(this,"Validated!",Toast.LENGTH_LONG).show()
+                loadingDialog.show()
             }
         }
 
@@ -106,10 +108,12 @@ class MainActivity : AppCompatActivity() {
         val updateCloseImgBtn = updateTaskDialogBox.findViewById<ImageView>(R.id.closeImg)
         updateCloseImgBtn.setOnClickListener { updateTaskDialogBox.dismiss() }
 
-        val updateTaskBtn = addTaskDialogBox.findViewById<Button>(R.id.updateTaskBtn)
+        val updateTaskBtn = updateTaskDialogBox.findViewById<Button>(R.id.updateTaskBtn)
         updateTaskBtn.setOnClickListener {
             if(validateEditText(updateEDTitle,updateEDTitleL) && validateEditText(updateETDesc,updateETDescL)){
+                updateTaskDialogBox.dismiss()
                 Toast.makeText(this,"Validated!",Toast.LENGTH_LONG).show()
+                loadingDialog.show()
             }
         }
         //update task end here
