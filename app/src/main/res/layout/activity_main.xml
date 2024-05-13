@@ -4,54 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainbgcolor"
+    android:background="@color/mainBackgroundColor"
     tools:context=".MainActivity">
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <TextView
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/titleTxt"
-            android:layout_marginTop="16dp"
             android:layout_gravity="center"
-            android:text="@string/welcome_back"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            android:text="TaskTrove"
+            android:textSize="35sp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Your current tasks overview "
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/SearchInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="10dp"
+            app:startIconDrawable="@drawable/search"
+            app:errorEnabled="false"
+            app:hintEnabled="false"
+
+            android:id="@+id/edSearchL">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"
+                android:background="@color/normalBackgrounnd"
+                android:textStyle="bold"
+                android:hint="Search..."
+                android:gravity="center"
+                android:id="@+id/edSearch"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/taskRV"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:orientation="vertical"
             android:paddingBottom="100dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/view_task_layout"
-            />
+            tools:listitem="@layout/view_task_layout"/>
+
 
 
 
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:backgroundTint="@color/material_dynamic_primary50"
-        android:text="@string/add_task"
-        android:textColor="@color/black"
-        android:contentDescription="@string/floating_action_btn"
+        android:backgroundTint="@color/blue"
+        android:text="New Task"
+        android:id="@+id/addTaskFABtn"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="18sp"
-        app:icon="@drawable/edit_24"
-        app:iconSize="20dp"
-        app:iconTint="@color/black"
+
+
+
         />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

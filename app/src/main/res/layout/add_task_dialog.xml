@@ -5,37 +5,38 @@
     style="@style/CardViewStyle"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginHorizontal="10dp"
-    android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@color/white"
-    app:cardElevation="10dp"
-    app:cardPreventCornerOverlap="false"
-    >
+    app:cardElevation="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F6F5F2"
-        android:layout_margin="8dp">
+        android:background="#EBDAF3"
+        >
 
         <TextView
             android:id="@+id/titleTaskTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/new_task"
-            android:textStyle="bold"
-            android:textSize="24sp"/>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="New Task"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
 
         <ImageView
-
-            android:layout_width="30dp"
-            android:layout_height="30dp"
             android:id="@+id/closeImg"
-            android:layout_marginVertical="4dp"
-            android:src="@drawable/trash_24"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_margin="8dp"
-            android:contentDescription="@string/delete" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/close" />
 
         <View
             android:layout_width="match_parent"
@@ -47,62 +48,62 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/viewHLine"
             android:layout_marginVertical="8dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/viewHLine"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="10dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.App.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_the_task_title"
-                android:id="@+id/edTaskDescL"
-                >
+                android:hint="Enter The Task Title"
+                android:id="@+id/edTaskTitleL">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    style="@style/Widget.AppCompat.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:id="@+id/edTaskDesc"
-                    android:background="#F0EBE3"
-                    android:inputType="text"/>
-
+                    android:background="#F2E6FF"
+                    android:id="@+id/edTaskTitle"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.App.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_task_description"
-                android:background="#F0EBE3"
-                android:id="@+id/edTaskTitleL"
-                >
+                android:hint="Enter The Task Description"
+                android:id="@+id/edTaskDescL">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    style="@style/Widget.AppCompat.TextInputLayout"
                     android:layout_width="match_parent"
+                    android:background="#F2E6FF"
+                    android:gravity="top|start"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top|start"
+                    android:id="@+id/edTaskDesc"
                     android:lines="5"
                     android:maxLines="5"
-                    android:id="@+id/edTaskTitle"
-                    android:inputType="textMultiLine"/>
-
+                    android:inputType="textMultiLine" />
             </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/saveTaskBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="?actionBarSize"
                 android:layout_gravity="center"
-                android:text="@string/add_task"
-                android:textSize="15sp"
-                android:layout_marginTop="4dp"
-                android:backgroundTint="@color/black"
-                style="@style/Widget.App.Button.Fill"
-                />
+                android:text="Save Task"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/blue"
+                android:layout_marginTop="4dp"/>
+
         </LinearLayout>
 
-    </RelativeLayout>
 
+
+
+
+    </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

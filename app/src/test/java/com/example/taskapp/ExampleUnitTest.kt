@@ -1,4 +1,4 @@
-package com.example.lab_exam_04
+package com.example.taskapp
 
 import org.junit.Test
 
